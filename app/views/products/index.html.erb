@@ -1,0 +1,10 @@
+<h1>Your Product List</h1>
+<ul> 
+  <% @products.each do |product| %>
+    <li>
+      <%= product.name %> - <%= product.measurement_unit %> - <%= product.price %>
+      <%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+    <% end %>
+</ul>
+<%= link_to 'Add New Product', new_product_path %>
